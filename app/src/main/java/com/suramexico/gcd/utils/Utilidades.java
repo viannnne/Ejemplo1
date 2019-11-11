@@ -9,7 +9,7 @@ public class Utilidades {
     }
 
     public String getStringFromET(EditText editText){
-        if(editText!= null && editText.getText().toString().isEmpty()){
+        if(editText != null && !editText.getText().toString().isEmpty()){
             return editText.getText().toString();
         }else{
             return "Not available";
