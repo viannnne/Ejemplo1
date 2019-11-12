@@ -8,4 +8,5 @@
     <string name="mensaje_texto_no_disponible">No disponible</string>
     <string name="mensaje_permiso_concedido">Permiso concedido</string>
     <string name="mensaje_permiso_necesario">Es necesario conceder el permiso</string>
+    <string name="title_activity_main3">Main3Activity</string>
 </resources>

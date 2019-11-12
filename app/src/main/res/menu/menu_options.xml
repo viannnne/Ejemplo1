@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/action_about_of"
+    android:icon="@drawable/ic_arrow_right"
+    app:showAsAction="never"
+    android:title="Add">
+</item>
+<item
+    android:id="@+id/action_settings"
+    app:showAsAction="never"
+    android:title="Settings">
+</item>
+</menu>
