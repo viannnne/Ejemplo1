@@ -12,7 +12,7 @@ public class Utilidades {
         if(editText != null && !editText.getText().toString().isEmpty()){
             return editText.getText().toString();
         }else{
-            return "Not available";
+            return "No disponible";
         }
     }
 }
