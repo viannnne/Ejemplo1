@@ -9,4 +9,9 @@
     <string name="mensaje_permiso_concedido">Permiso concedido</string>
     <string name="mensaje_permiso_necesario">Es necesario conceder el permiso</string>
     <string name="title_activity_main3">Main3Activity</string>
+    <string name="menu_acerca_de">Acerca de...</string>
+    <string name="menu_configuracion">Configuracion</string>
+    <string name="titulo_alert_acerca_de">Acerca de ...</string>
+    <string name="mensaje_alert_acerca_de">Esta aplicación fue creada como parte de material pedagógico.</string>
+    <string name="etiqueta_boton_alert_acerca_de">Aceptar</string>
 </resources>
