@@ -60,7 +60,7 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         initView();
         loadValues();
-        requestPermissions(Main2Activity.this, PERMISSIONS_MEDIA, REQUEST_CAMERA);
+       // requestPermissions(Main2Activity.this, PERMISSIONS_MEDIA, REQUEST_CAMERA);
         requestPermissions(Main2Activity.this, PERMISSIONS_STORAGE, REQUEST_STORAGE);
     }
 
@@ -112,7 +112,8 @@ public class Main2Activity extends AppCompatActivity {
 
 
     public void requestPermissions(Activity context, String[] permissions, int requestCode){
-        if(ActivityCompat.checkSelfPermission(context , permissions[0]) != PackageManager.PERMISSION_GRANTED ){
+        if(ActivityCompat.checkSelfPermission(context , permissions[0]) !=
+                PackageManager.PERMISSION_GRANTED ){
             ActivityCompat.requestPermissions(context, permissions, requestCode);
         }else{
             Toast.makeText(Main2Activity.this,
@@ -134,7 +135,7 @@ public class Main2Activity extends AppCompatActivity {
             }
 
         }else if(requestCode == REQUEST_STORAGE){
-            if((grantResults.length > 0 && grantResults[1] == PackageManager.PERMISSION_GRANTED)){
+            if((grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)){
                 Toast.makeText(Main2Activity.this,
                         getResources().getString(R.string.mensaje_permiso_concedido), Toast.LENGTH_LONG).show();
             }else{
@@ -152,7 +153,8 @@ public class Main2Activity extends AppCompatActivity {
 
         @Override
         public void onClick(View view) {
-            if(ActivityCompat.checkSelfPermission(Main2Activity.this , Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ){
+            if(ActivityCompat.checkSelfPermission(Main2Activity.this ,
+                    Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ){
                 requestPermissions(Main2Activity.this, PERMISSIONS_MEDIA, REQUEST_CAMERA);
             }else{
                 TomarFoto();
@@ -164,15 +166,16 @@ public class Main2Activity extends AppCompatActivity {
     private void TomarFoto(){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (intent.resolveActivity(getPackageManager()) != null) {
-            File photoFile = getFilePhoto();
-            if (photoFile != null) {
+            //File photoFile = getFilePhoto();
+            //if (photoFile != null) {
                 ContentValues values = new ContentValues();
                 values.put(MediaStore.Images.Media.TITLE, "Avatar");
                 values.put(MediaStore.Images.Media.DESCRIPTION, "Foto_" + System.currentTimeMillis());
-                photoURI = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+                photoURI = getContentResolver().insert(
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(intent, REQUEST_TAKE_PHOTO);
-            }
+            //}
         }
     }
 

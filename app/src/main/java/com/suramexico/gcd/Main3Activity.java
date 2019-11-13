@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class Main3Activity extends AppCompatActivity {
 
@@ -43,7 +44,9 @@ public class Main3Activity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
       
         switch (item.getItemId()) {
-            case R.id.action_about_of:;
+            case R.id.action_about_of:
+                Toast.makeText(this, "acerca",
+                        Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_settings:
                 return true;
